@@ -53,7 +53,7 @@ void GamePlayScene::Initialize()
 
 	spriteTransform_.Initialize();
 
-	uvTexture = texture->LoadTexture("Resources/galaxy.png");
+	uvTexture = texture->LoadTexture("Resources/game3.png");
 	monsterTexture = texture->LoadTexture("Resources/monsterBall.png");
 	
 
