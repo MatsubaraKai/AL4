@@ -57,7 +57,7 @@ void GamePlayScene::Initialize()
 	monsterTexture = texture->LoadTexture("Resources/monsterBall.png");
 	
 
-	soundData1 = audio->SoundLoadWave("Resources/Sounds/digitalworld.wav");
+	soundData1 = audio->SoundLoadWave("Resources/Sounds/loop1.wav");
 	audio->SoundPlayWave(soundData1, true);
 
 	sprite->Initialize(spriteData, uvTexture);
