@@ -53,9 +53,8 @@ void GamePlayScene::Initialize()
 
 	spriteTransform_.Initialize();
 
-	uvTexture = texture->LoadTexture("Resources/galaxy.png");
+	uvTexture = texture->LoadTexture("Resources/uvChecker.png");
 	monsterTexture = texture->LoadTexture("Resources/monsterBall.png");
-	
 
 	soundData1 = audio->SoundLoadWave("Resources/Sounds/digitalworld.wav");
 	audio->SoundPlayWave(soundData1, true);

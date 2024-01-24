@@ -22,9 +22,6 @@
     <Filter Include="ソース ファイル\Common">
       <UniqueIdentifier>{af4a3925-cf5d-4a54-bf7b-4658bc10dd5f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル\Common">
-      <UniqueIdentifier>{82a1553c-36bd-49a8-af4c-ab8da30ca6dd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="リソース ファイル\Shader">
       <UniqueIdentifier>{a943f010-e482-44a7-875a-5f5fbf7abae3}</UniqueIdentifier>
     </Filter>
@@ -90,6 +87,9 @@
     </Filter>
     <Filter Include="ヘッダー ファイル\Audio">
       <UniqueIdentifier>{f973bd64-e372-453a-a492-114da9382559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Input\Common">
+      <UniqueIdentifier>{82a1553c-36bd-49a8-af4c-ab8da30ca6dd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -192,13 +192,13 @@
       <Filter>ヘッダー ファイル\3d</Filter>
     </ClInclude>
     <ClInclude Include="Common\WindowAPI.h">
-      <Filter>ヘッダー ファイル\Common</Filter>
+      <Filter>ヘッダー ファイル\Input\Common</Filter>
     </ClInclude>
     <ClInclude Include="Common\DirectXCommon.h">
-      <Filter>ヘッダー ファイル\Common</Filter>
+      <Filter>ヘッダー ファイル\Input\Common</Filter>
     </ClInclude>
     <ClInclude Include="Common\MyEngine.h">
-      <Filter>ヘッダー ファイル\Common</Filter>
+      <Filter>ヘッダー ファイル\Input\Common</Filter>
     </ClInclude>
     <ClInclude Include="Logger\ConvertString.h">
       <Filter>ヘッダー ファイル\Logger</Filter>
