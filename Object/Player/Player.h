@@ -50,11 +50,12 @@ private:
 	WorldTransform worldTransform_;
 
 	// キャラクターの移動速さ
-	float kCharacterSpeedX = 0.15f;
-	float kCharacterSpeedY = 0.15f;
+	
 
-	float kCharacterSpeed = 0.3f;
-
+	float kCharacterSpeed = 0.2f;
+	float JumpVelocity = 0.1f;
+	float JumpGravity = 0.0001f;
+	bool Jump = false;
 	bool isStart = false;
 	bool isGoal = false;
 	bool isOver = false;

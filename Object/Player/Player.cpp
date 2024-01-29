@@ -37,10 +37,12 @@ void Player::Update()
 		// 押した方向で移動ベクトルを変更(左右)
 		if (!Input::GetInstance()->GetJoystickState(0, joyState))
 		{
-			if (input_->PushKey(DIK_SPACE)) {
-				{
-					move.y -= kCharacterSpeed;
-				}
+			
+			if (input_->PushKey(DIK_W) && Jump == false) {
+				Jump = true;
+			}
+			if (Jump == true) {
+
 			}
 			if (input_->PushKey(DIK_D)) {
 				{
@@ -52,27 +54,28 @@ void Player::Update()
 					move.x -= kCharacterSpeed;
 				}
 			}
-			
+			if (worldTransform_.translation_.y < 2.0f) {
+				worldTransform_.translation_.y = 2.0f;
+			}
+			ImGui::Begin("aaa");
+			ImGui::DragFloat3("translation_", (float*)&worldTransform_.translation_, 0.01f, -100.0f, 100.0f);
+			ImGui::End();
 		}
 
 		if (Input::GetInstance()->GetJoystickState(0, joyState))
 		{
 			if (joyState.Gamepad.wButtons & XINPUT_GAMEPAD_X)
 			{
-				move.y -= kCharacterSpeed;
 			}
 		}
 
 		if (isGoal) {
-			kCharacterSpeedX = 0;
-			kCharacterSpeedY = 0;
 			kCharacterSpeed = 0;
 		}
 
 		// 座標移動(ベクトルの加算)
 		worldTransform_.translation_.x += move.x;
-		worldTransform_.translation_.y -= move.y;
-
+		worldTransform_.translation_.y += move.y;
 
 		// ワールドトランスフォームの更新
 		worldTransform_.UpdateMatrix();
@@ -121,9 +124,7 @@ void Player::GamePlayReset()
 	{
 		if (input_->PushKey(DIK_R))
 		{
-		
 			isReset = true;
-
 		}
 
 		if (isReset == true)
@@ -131,8 +132,6 @@ void Player::GamePlayReset()
 			Reset();
 			isReset = false;
 		}
-
-			
 	}
 
 	if (Input::GetInstance()->GetJoystickState(0, joyState))
@@ -150,12 +149,11 @@ void Player::GamePlayReset()
 			isReset = false;
 		}
 	}
-
 }
 
 void Player::Reset()
 {
-	worldTransform_.translation_ = { -40, -22, 0 };
+	worldTransform_.translation_ = { -40, 2, 0 };
 	isGoal = false;
 	isStart = false;
 }
