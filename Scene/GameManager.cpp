@@ -91,7 +91,6 @@ void GameManager::Update()
 			}
 		}
 		
-
 		if (Input::GetInstance()->GetJoystickState(0, joyState))
 		{
 			bool xButtonIsPressed = (joyState.Gamepad.wButtons & XINPUT_GAMEPAD_X) != 0;
@@ -109,8 +108,6 @@ void GameManager::Update()
 				xButtonWasPressed = false;
 			}
 		}
-
-		
 
 		break;
 
@@ -148,7 +145,6 @@ void GameManager::Update()
 			}
 		}
 
-
 		if (Input::GetInstance()->GetJoystickState(0, joyState))
 		{
 			bool xButtonIsPressed = (joyState.Gamepad.wButtons & XINPUT_GAMEPAD_X) != 0;
@@ -167,8 +163,6 @@ void GameManager::Update()
 
 
 		}
-
-
 
 		break;
 
