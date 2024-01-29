@@ -16,9 +16,6 @@ void Player::Initialize(Model* model, Vector3 position, const std::string& filen
 	input_ = Input::GetInstance();
 	audio_ = Audio::GetInstance();
 
-
-
-
 	model_->Initialize("Resources", filename);
 
 	worldTransform_.Initialize();

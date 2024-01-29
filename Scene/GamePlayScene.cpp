@@ -87,7 +87,6 @@ void GamePlayScene::Update()
 	player_->Update();
 	
 	resetWorldTransform.UpdateMatrix();
-
 	sphere->Update();
 	sprite->Update();
 
