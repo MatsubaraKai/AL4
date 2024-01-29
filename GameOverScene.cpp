@@ -16,7 +16,7 @@ void GameOverScene::Initialize()
 	model = new Model;
 	sphere = new Sphere;
 	model->Initialize("Resources", "gameover.obj");
-	uvTexture = texture->LoadTexture("Resources/game2.png.png");
+	uvTexture = texture->LoadTexture("Resources/game2.png");
 	sphere->Initialize(uvTexture);
 
 	Vector3 position = { 0,10,0 };

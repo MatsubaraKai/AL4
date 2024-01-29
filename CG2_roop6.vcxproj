@@ -127,6 +127,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Scene\GameManager.cpp" />
     <ClCompile Include="Scene\GamePlayScene.cpp" />
     <ClCompile Include="Scene\GameTitleScene.cpp" />
+    <ClCompile Include="Titlename.cpp" />
     <ClCompile Include="Utilty\CSVReader.cpp" />
     <ClCompile Include="Utilty\ViewProjection.cpp" />
     <ClCompile Include="Utilty\WorldTransform.cpp" />
@@ -166,6 +167,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Scene\GameManager.h" />
     <ClInclude Include="Scene\GamePlayScene.h" />
     <ClInclude Include="Scene\GameTitleScene.h" />
+    <ClInclude Include="Titlename.h" />
     <ClInclude Include="Utilty\CSVReader.h" />
     <ClInclude Include="Utilty\LeakCheck.h" />
     <ClInclude Include="Utilty\ViewProjection.h" />
