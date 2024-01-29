@@ -38,15 +38,15 @@ void Player::Update()
 		if (!Input::GetInstance()->GetJoystickState(0, joyState))
 		{
 			
-			if (input_->PushKey(DIK_W) && Jump == false) {
+			if (input_->PushKey(DIK_SPACE) && Jump == false) {
+				JumpVelocity = 1.0f;
 				Jump = true;
 			}
+
 			if (Jump == true) {
-
+				move.y += JumpVelocity -= JumpGravity;
 			}
-			if (Jump == false) {
-
-			}
+			
 			if (input_->PushKey(DIK_D)) {
 				{
 					move.x += kCharacterSpeed;
@@ -59,10 +59,17 @@ void Player::Update()
 			}
 			if (worldTransform_.translation_.y < 2.0f) {
 				worldTransform_.translation_.y = 2.0f;
+				Jump = false;
 			}
-			ImGui::Begin("aaa");
+			if (worldTransform_.translation_.x <= -50.0f) {
+				worldTransform_.translation_.x = -50.0f;
+			}
+			if (worldTransform_.translation_.x >= 50.0f) {
+				worldTransform_.translation_.x = 50.0f;
+			}
+		/*	ImGui::Begin("aaa");
 			ImGui::DragFloat3("translation_", (float*)&worldTransform_.translation_, 0.01f, -100.0f, 100.0f);
-			ImGui::End();
+			ImGui::End();*/
 		}
 
 		if (Input::GetInstance()->GetJoystickState(0, joyState))

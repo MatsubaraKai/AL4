@@ -53,8 +53,8 @@ private:
 	
 
 	float kCharacterSpeed = 0.2f;
-	float JumpVelocity = 0.1f;
-	float JumpGravity = 0.0001f;
+	float JumpVelocity;
+	float JumpGravity = 0.02f;
 	bool Jump = false;
 	bool isStart = false;
 	bool isGoal = false;
