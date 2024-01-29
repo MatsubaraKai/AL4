@@ -61,7 +61,7 @@ void GamePlayScene::Initialize()
 
 	sprite->Initialize(spriteData, uvTexture);
 	sphere->Initialize(uvTexture);
-	Vector3 playerPos = { -36, 20, 0 };
+	Vector3 playerPos = { -40, -22, 0 };
 	player_->Initialize(model_, playerPos, "plane.obj");
 	resetModel->Initialize("Resources", "Reset.obj");
 

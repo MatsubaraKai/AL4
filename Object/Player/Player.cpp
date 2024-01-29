@@ -34,21 +34,8 @@ void Player::Initialize(Model* model, Vector3 position, const std::string& filen
 void Player::Update()
 {// キャラクターの移動ベクトル
 		move = { 0, 0, 0 };
-
-		move.x += kCharacterSpeedX;
-		move.y += kCharacterSpeedY;
-
-		// キャラクターの移動ベクトル
-		move = { 0, 0, 0 };
-
-		if (isStart) {
-			move.x += kCharacterSpeedX;
-			move.y += kCharacterSpeedY;
-		}
-
 		//ゲームパットの状態を得る変数(XINPUT)
 		XINPUT_STATE joyState;
-
 
 		// 押した方向で移動ベクトルを変更(左右)
 		if (!Input::GetInstance()->GetJoystickState(0, joyState))
@@ -56,9 +43,19 @@ void Player::Update()
 			if (input_->PushKey(DIK_SPACE)) {
 				{
 					move.y -= kCharacterSpeed;
-					isStart = true;
 				}
 			}
+			if (input_->PushKey(DIK_D)) {
+				{
+					move.x += kCharacterSpeed;
+				}
+			}
+			if (input_->PushKey(DIK_A)) {
+				{
+					move.x -= kCharacterSpeed;
+				}
+			}
+			
 		}
 
 		if (Input::GetInstance()->GetJoystickState(0, joyState))
@@ -66,7 +63,6 @@ void Player::Update()
 			if (joyState.Gamepad.wButtons & XINPUT_GAMEPAD_X)
 			{
 				move.y -= kCharacterSpeed;
-				isStart = true;
 			}
 		}
 
@@ -97,12 +93,9 @@ void Player::Draw(ViewProjection viewProjection){
 }
 
 void Player::OnCollisionX(){
-	kCharacterSpeedX *= -1;
 }
 
 void Player::OnCollisionY(){
-	kCharacterSpeedY *= -1;
-	kCharacterSpeed *= -1;
 }
 
 void Player::OnCollisionGoal(){
@@ -129,7 +122,7 @@ void Player::GamePlayReset()
 		// 押した方向で移動ベクトルを変更(左右)
 	if (!Input::GetInstance()->GetJoystickState(0, joyState))
 	{
-		if (input_->PushKey(DIK_A))
+		if (input_->PushKey(DIK_R))
 		{
 		
 			isReset = true;
@@ -165,7 +158,7 @@ void Player::GamePlayReset()
 
 void Player::Reset()
 {
-	worldTransform_.translation_ = { -36, 20, 0 };
+	worldTransform_.translation_ = { -40, -22, 0 };
 	isGoal = false;
 	isStart = false;
 }

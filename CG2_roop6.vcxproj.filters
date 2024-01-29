@@ -314,6 +314,9 @@
     <ClInclude Include="Titlename.h">
       <Filter>ヘッダー ファイル\Object\Titlename</Filter>
     </ClInclude>
+    <ClInclude Include="Object\Player\Player.h">
+      <Filter>ヘッダー ファイル\Object\Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Resources\Shaders\Object3d.PS.hlsl">
