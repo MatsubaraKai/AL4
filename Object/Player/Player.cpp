@@ -44,6 +44,9 @@ void Player::Update()
 			if (Jump == true) {
 
 			}
+			if (Jump == false) {
+
+			}
 			if (input_->PushKey(DIK_D)) {
 				{
 					move.x += kCharacterSpeed;
