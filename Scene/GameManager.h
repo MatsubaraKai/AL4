@@ -29,7 +29,7 @@ private:
 	GameOverScene* over = nullptr;
 	GameClearScene* clear = nullptr;
 
-	const wchar_t* kWindowTitle = L"AL4";
+	const wchar_t* kWindowTitle = L"避けろ！　操作:A,D,SPACE";
 
 	//アプリケーションの開始
 	const uint32_t kWindowWidth = 1280;
