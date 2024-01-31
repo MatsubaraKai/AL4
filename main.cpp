@@ -13,7 +13,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		scene->Update();
 		scene->Draw();
 	}
-
 	delete scene;
 	return 0;
 }

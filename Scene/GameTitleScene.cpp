@@ -5,7 +5,6 @@ GameTitleScene::~GameTitleScene()
 {
 	delete model;
 	delete sphere;
-
 }
 
 void GameTitleScene::Initialize()
@@ -27,10 +26,6 @@ void GameTitleScene::Initialize()
 	worldTransform_.UpdateMatrix();
 
 	viewProjection_.Initialize();
-
-
-
-
 }
 
 void GameTitleScene::Update()
@@ -44,6 +39,5 @@ void GameTitleScene::Draw()
 {
 	model->Draw(viewProjection_, worldTransform_);
 	sphere->Draw();
-
 }
 
