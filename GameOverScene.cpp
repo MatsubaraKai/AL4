@@ -27,10 +27,6 @@ void GameOverScene::Initialize()
 	worldTransform_.UpdateMatrix();
 
 	viewProjection_.Initialize();
-
-
-
-
 }
 
 void GameOverScene::Update()
@@ -44,6 +40,5 @@ void GameOverScene::Draw()
 {
 	model->Draw(viewProjection_, worldTransform_);
 	sphere->Draw();
-
 }
 

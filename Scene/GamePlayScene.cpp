@@ -23,7 +23,7 @@ void GamePlayScene::Initialize()
 	texture = TextureManager::GetInstance();
 	input = Input::GetInstance();
 	audio = Audio::GetInstance();
-
+	materialData = new Material;
 	spriteData = new SpriteData;
 	sprite = new Sprite;
 	model_ = new Model;
@@ -59,7 +59,7 @@ void GamePlayScene::Initialize()
 	soundData1 = audio->SoundLoadWave("Resources/Sounds/loop1.wav");
 	audio->SoundPlayWave(soundData1, true);
 
-	sprite->Initialize(spriteData, uvTexture);
+	sprite->Initialize(spriteData, uvTexture,materialData);
 	sphere->Initialize(uvTexture);
 	Vector3 playerPos = { -40, 2, 0 };
 	player_->Initialize(model_, playerPos, "plane.obj");
@@ -93,7 +93,6 @@ void GamePlayScene::Update()
 	CheckAllCollisions();
 
 	IsClear = player_->GetIsClear();
-
 }
 
 void GamePlayScene::Draw()
@@ -102,9 +101,6 @@ void GamePlayScene::Draw()
 	for (Block* block : blocks_) {
 		block->Draw(viewProjection_);
 	}
-
-
-
 	player_->Draw(viewProjection_);
 	//sprite->Draw(spriteTransform_);
 	sphere->Draw();

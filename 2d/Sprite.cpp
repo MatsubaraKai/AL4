@@ -1,19 +1,16 @@
 #include "Sprite.h"
-
+#include "DirectXCommon.h"
 
 Sprite::~Sprite()
 {
 
 }
-
-
-void Sprite::Initialize(SpriteData* data,uint32_t textureHandle)
+void Sprite::Initialize(SpriteData* data,uint32_t textureHandle, Material* color)
 {
 	winApp_ = WindowAPI::GetInstance();
 	dxCommon_ = DirectXCommon::GetInstance();
 	engine_ = MyEngine::GetInstance();
 	texture_ = TextureManager::GetInstance();
-	
 	textureHandle_ = textureHandle;
 
 
@@ -99,6 +96,8 @@ void Sprite::Update()
 
 void Sprite::Draw(WorldTransform transform)
 {
+	// 新しい色情報を GPU に送信
+	dxCommon_->GetCommandList()->SetGraphicsRootConstantBufferView(3, materialResource_->GetGPUVirtualAddress() + offsetof(Material, color));
 	dxCommon_->GetCommandList()->IASetVertexBuffers(0, 1, &vertexBufferView_);	//VBVを設定
 	//形状を設定。PS0にせっていしているものとはまた別。同じものを設定する
 	dxCommon_->GetCommandList()->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);

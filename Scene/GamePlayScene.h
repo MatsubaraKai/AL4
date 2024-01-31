@@ -9,7 +9,7 @@
 #include"Audio.h"
 #include"ViewProjection.h"
 #include"WorldTransform.h"
-
+#include"Transform.h"
 #include"Player.h"
 #include"Object/Block/Block.h"
 #include"CSVReader.h"
@@ -60,7 +60,7 @@ private:
 	Audio* audio = nullptr;
 
 	SoundData soundData1;
-
+	Material* materialData = nullptr;
 	SpriteData* spriteData = nullptr;
 	Sprite* sprite;
 	Sphere* sphere;

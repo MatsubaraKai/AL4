@@ -27,6 +27,7 @@ private:
 	Input* input = nullptr;
 
 	SpriteData* spriteData = nullptr;
+	Material* materialData = nullptr;
 	Sphere* sphere;
 	Sprite* sprite;
 	Model* model;

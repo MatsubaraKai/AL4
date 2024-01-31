@@ -3,9 +3,7 @@
 #include"DirectXCommon.h"
 #include"MyEngine.h"
 #include"TextureManager.h"
-
 #include"MathUtilty.h"
-
 #include"Transform.h"
 #include"Vector4.h"
 #include"Matrix4x4.h"
@@ -13,13 +11,6 @@
 #include"ViewProjection.h"
 
 #include<wrl.h>
-
-
-struct SpriteData
-{
-	Vector4 vertex[6];
-	Transform  transform;
-};
 
 class Sprite
 {
@@ -33,7 +24,7 @@ public:
 	/// <summary>
 	/// 初期化
 	/// </summary>
-	void Initialize(SpriteData* data, uint32_t textureHandle);
+	void Initialize(SpriteData* data, uint32_t textureHandle, Material* color);
 
 	/// <summary>
 	/// 更新処理

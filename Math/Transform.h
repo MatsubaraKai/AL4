@@ -41,3 +41,9 @@ struct DirectionalLight
 	float intensity;
 };
 
+struct SpriteData
+{
+	Vector4 vertex[6];
+	Transform  transform;
+};
+
