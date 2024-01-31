@@ -60,8 +60,8 @@ private:
 	Audio* audio = nullptr;
 
 	SoundData soundData1;
-	Material* materialData = nullptr;
-	SpriteData* spriteData = nullptr;
+	Material* materialData;
+	SpriteData* spriteData;
 	Sprite* sprite;
 	Sphere* sphere;
 	Model* model_ = nullptr;

@@ -26,8 +26,8 @@ private:
 	TextureManager* texture = nullptr;
 	Input* input = nullptr;
 
-	SpriteData* spriteData = nullptr;
-	Material* materialData = nullptr;
+	SpriteData* spriteData;
+	Material* materialData;
 	Sphere* sphere;
 	Sprite* sprite;
 	Model* model;
