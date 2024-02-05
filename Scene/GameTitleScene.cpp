@@ -14,7 +14,7 @@ void GameTitleScene::Initialize()
 	sphere = new Sphere;
 	uvTexture = texture->LoadTexture("Resources/game2.png");
 	sphere->Initialize(uvTexture);
-	Vector3 position = { 10,10,0 };
+	Vector3 position = { 0,10,0 };
 	worldTransform_.Initialize();
 	worldTransform_.translation_ = position;
 	worldTransform_.scale_ = { 10,10,0 };
