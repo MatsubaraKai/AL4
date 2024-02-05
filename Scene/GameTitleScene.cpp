@@ -1,9 +1,7 @@
 #include "GameTitleScene.h"
 
-
 GameTitleScene::~GameTitleScene()
 {
-	delete model;
 	delete sphere;
 }
 
@@ -12,19 +10,23 @@ void GameTitleScene::Initialize()
 	texture = TextureManager::GetInstance();
 	input = Input::GetInstance();
 
+
+	spriteData->transform =
+	{
+		{1.0f,1.0f,1.0f},
+		{0.0f,0.0f,0.0f},
+		{0.0f,0.0f,0.0f}
+	};
 	model = new Model;
 	sphere = new Sphere;
-	model->Initialize("Resources", "gamename.obj");
 	uvTexture = texture->LoadTexture("Resources/game2.png");
 	sphere->Initialize(uvTexture);
-
+	sprite->Initialize(spriteData, uvTexture);
 	Vector3 position = { 0,10,0 };
-
 	worldTransform_.Initialize();
 	worldTransform_.translation_ = position;
 	worldTransform_.scale_ = { 10,10,0 };
 	worldTransform_.UpdateMatrix();
-
 	viewProjection_.Initialize();
 }
 
@@ -37,7 +39,6 @@ void GameTitleScene::Update()
 
 void GameTitleScene::Draw()
 {
-	model->Draw(viewProjection_, worldTransform_);
 	sphere->Draw();
 }
 

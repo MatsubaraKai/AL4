@@ -56,9 +56,6 @@ void GameManager::Initialize()
 	clear->Initialize();
 
 	scene = TITLE;
-
-	toachSE_ = audio->SoundLoadWave("Resources/Sounds/se_sad07.wav");
-
 	// Xボタンの前回の状態を格納するフラグ
 	bool xButtonWasPressed = false;
 
@@ -87,7 +84,6 @@ void GameManager::Update()
 			if (input->TriggerKey(DIK_SPACE))
 			{
 				scene = PLAY;
-				audio->SoundPlayWave(toachSE_, false);
 			}
 		}
 		
@@ -115,18 +111,6 @@ void GameManager::Update()
 		gameScene->Update();
 		gameScene->Draw();
 
-		if (gameScene->GetIsOver() == true)
-		{
-			scene = OVER;
-			gameScene->SetIsOver(false);
-
-		}
-
-		if (gameScene->GetIsClear() == true)
-		{
-			scene = CLEAR;
-		}
-
 		break;
 
 	case OVER:
@@ -141,7 +125,6 @@ void GameManager::Update()
 			if (input->TriggerKey(DIK_SPACE))
 			{
 				scene = TITLE;
-				audio->SoundPlayWave(toachSE_, false);
 			}
 		}
 
@@ -173,14 +156,11 @@ void GameManager::Update()
 
 		gameScene->Reset();
 
-
-
 		if (!Input::GetInstance()->GetJoystickState(0, joyState))
 		{
 			if (input->TriggerKey(DIK_SPACE))
 			{
 				scene = TITLE;
-				audio->SoundPlayWave(toachSE_, false);
 			}
 		}
 

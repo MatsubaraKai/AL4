@@ -25,7 +25,6 @@ void GameOverScene::Initialize()
 	worldTransform_.translation_ = position;
 	worldTransform_.scale_ = { 10,10,0 };
 	worldTransform_.UpdateMatrix();
-
 	viewProjection_.Initialize();
 
 
@@ -42,8 +41,5 @@ void GameOverScene::Update()
 
 void GameOverScene::Draw()
 {
-	model->Draw(viewProjection_, worldTransform_);
-	sphere->Draw();
-
 }
 

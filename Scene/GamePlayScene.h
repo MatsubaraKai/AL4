@@ -22,35 +22,6 @@ public:
 	void Initialize();
 	void Update();
 	void Draw();
-
-
-	/// <summary>
-///	衝突判定と応答
-/// </summary>
-	void CheckAllCollisions();
-
-	/// <summary>
-	/// ブロックデータの読み込み
-	/// </summary>
-	void LoadBlockPopData();
-
-	/// <summary>
-	/// ブロック発生コマンドの更新
-	/// </summary>
-	void UpdateBlockPopCommands();
-
-	void BlockSpown(Vector3, float);
-
-	/// <summary>
-	///	敵:敵弾を追加する
-	/// </summary>
-	void AddBlock(Block* block);
-
-	bool GetIsClear()const { return IsClear; };
-	bool GetIsOver(){ return IsOver; };
-
-	void SetIsOver(bool isOver);
-
 	void Reset();
 
 private:

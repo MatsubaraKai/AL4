@@ -41,8 +41,5 @@ void GameClearScene::Update()
 
 void GameClearScene::Draw()
 {
-	model->Draw(viewProjection_, worldTransform_);
-	sphere->Draw();
-
 }
 
