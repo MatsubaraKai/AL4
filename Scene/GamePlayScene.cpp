@@ -106,7 +106,7 @@ void GamePlayScene::Draw()
 
 
 	player_->Draw(viewProjection_);
-	//sprite->Draw(spriteTransform_);
+	sprite->Draw(spriteTransform_);
 	sphere->Draw();
 }
 
